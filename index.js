@@ -89,7 +89,20 @@ app.get('/', (req, res) => {
 
 app.get('/about', (req, res) => {
 
-  res.send('<h1>This is About Route.</h1>');
+  // res.send('<h1>This is About Route.</h1>');
+
+
+  fs.readFile('./pages/about.html', (err, data) => {
+
+    if (err) {
+      console.log('Error', err);
+      res.send('<h1>Something went wrong.</h1>');
+    } else {
+      res.write(data)
+      res.end();
+    }
+
+  })
 
 })
 
