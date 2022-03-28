@@ -97,7 +97,7 @@ app.get('/', (req, res) => {
 
 
 
-app.get('/about', (req, res) => {
+app.get('/about', localMiddleware, (req, res) => {
 
   // res.send('<h1>This is About Route.</h1>');
 
@@ -170,6 +170,14 @@ function globalMiddleware(req, res, next) {
   }
 
   next();
+}
+
+
+function localMiddleware(req, res, next) {
+
+  console.log('I am a local middleware');
+  next();
+
 }
 
 
