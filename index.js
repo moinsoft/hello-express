@@ -4,6 +4,7 @@ const cors = require('cors');
 const morgan = require('morgan');
 
 const app = express();
+const router = express.Router();
 
 
 app.use(express.json());
@@ -11,10 +12,11 @@ app.use(express.urlencoded({ extended: true }));
 app.use(morgan('dev'));
 app.use(cors());
 app.use(globalMiddleware);
+app.use(router);
 
 
 
-app.get('/', (req, res) => {
+router.get('/', (req, res) => {
 
   // res.send('Hello Moin Uddin');
   
@@ -97,7 +99,7 @@ app.get('/', (req, res) => {
 
 
 
-app.get('/about', localMiddleware, (req, res) => {
+router.get('/about', localMiddleware, (req, res) => {
 
   // res.send('<h1>This is About Route.</h1>');
 
@@ -118,7 +120,7 @@ app.get('/about', localMiddleware, (req, res) => {
 
 
 
-app.get('/products', (req, res) => {
+router.get('/products', (req, res) => {
 
   // res.send('<h1>This is Products Route.</h1>');
 
@@ -140,7 +142,7 @@ app.get('/products', (req, res) => {
 
 
 
-app.get('/contact', (req, res) => {
+router.get('/contact', (req, res) => {
 
   // res.send('<h1>This is Contact Route.</h1>');
 
