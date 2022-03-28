@@ -110,7 +110,21 @@ app.get('/about', (req, res) => {
 
 app.get('/products', (req, res) => {
 
-  res.send('<h1>This is Products Route.</h1>');
+  // res.send('<h1>This is Products Route.</h1>');
+
+
+
+  fs.readFile('./pages/products.html', (err, data) => {
+
+    if (err) {
+      console.log('Error', err);
+      res.send('<h1>Something went wrong.</h1>');
+    } else {
+      res.write(data)
+      res.end();
+    }
+
+  })
 
 })
 
