@@ -27,6 +27,19 @@ app.use((req, res, next) => {
 });
 
 
+app.use((error, req, res, next) => {
+  console.log('Error',error);
+
+  if (error.status) {
+    return res.status(error.status).send(`<h1>${error.message}</h1>`);
+  }
+
+  
+  res.status(500).send('<h1>Something went wrong.</h1>');
+
+});
+
+
 
 
 

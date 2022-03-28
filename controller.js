@@ -3,7 +3,9 @@ const fs = require('fs');
 
 exports.homeController = (req, res) => {
 
-  throw new Error('Something went wrong')
+  const error = new Error('Bad Request');
+  error.status = 404;
+  throw error;
 
   // res.send('Hello Moin Uddin');
   
