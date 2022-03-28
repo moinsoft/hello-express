@@ -10,6 +10,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(morgan('dev'));
 app.use(cors());
+app.use(globalMiddleware);
 
 
 
@@ -157,6 +158,19 @@ app.get('/contact', (req, res) => {
   })
 
 })
+
+
+
+function globalMiddleware(req, res, next) {
+  console.log(`${req.method} - ${req.url}`);
+  console.log('I am a global middleware');
+
+  if (req.query.bad) {
+    return res.status(400).send('Bad Request')
+  }
+
+  next();
+}
 
 
 
