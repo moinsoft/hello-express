@@ -15,6 +15,8 @@ app.use(globalMiddleware);
 // app.use(router);
 app.use(require('./routes'));
 
+app.use(express.static('./public'))
+
 
 app.use((req, res, next) => {
 
