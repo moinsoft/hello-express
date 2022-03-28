@@ -1,4 +1,5 @@
 const express = require('express')
+const fs = require('fs')
 
 const app = express()
 
@@ -65,7 +66,22 @@ app.get('/', (req, res) => {
 
   // );
 
-  res.send('<h1>This is Root Route.</h1>');
+
+
+  // res.send('<h1>This is Root Route.</h1>');
+
+
+  fs.readFile('./pages/index.html', (err, data) => {
+
+    if (err) {
+      console.log('Error', err);
+      res.send('<h1>Something went wrong.</h1>');
+    } else {
+      res.write(data)
+      res.end();
+    }
+
+  })
 
 })
 
