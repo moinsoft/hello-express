@@ -3,6 +3,8 @@ const fs = require('fs');
 
 exports.homeController = (req, res) => {
 
+  throw new Error('Something went wrong')
+
   // res.send('Hello Moin Uddin');
   
   // res.json({

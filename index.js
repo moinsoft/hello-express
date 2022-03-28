@@ -16,9 +16,36 @@ app.use(globalMiddleware);
 app.use(require('./routes'));
 
 
+app.use((req, res, next) => {
+
+  // res.status(404).send('<h1>404 Not Found</h1>');
+
+  const error = new Error('404 Not Found');
+  error.status = 404;
+  next(error);
+
+});
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+app.listen(4000, () => {
+
+  console.log('Server is listening on PORT 4000');
+
+})
 
 
 function globalMiddleware(req, res, next) {
@@ -39,17 +66,4 @@ function localMiddleware(req, res, next) {
   next();
 
 }
-
-
-
-
-
-
-
-
-app.listen(4000, () => {
-
-  console.log('Server is listening on PORT 4000');
-
-})
 
