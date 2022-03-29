@@ -1,4 +1,4 @@
-const fs = require('fs');
+// const fs = require('fs');
 
 
 exports.homeController = (req, res) => {
@@ -86,7 +86,7 @@ exports.homeController = (req, res) => {
 
   const title = 'Dynamic Title'
 
-  res.render('home', {title});
+  res.render('pages/home', {title});
 
 };
 
@@ -96,17 +96,22 @@ exports.aboutController = (req, res) => {
   // res.send('<h1>This is About Route.</h1>');
 
 
-  fs.readFile('./pages/about.html', (err, data) => {
+  // fs.readFile('./pages/about.html', (err, data) => {
 
-    if (err) {
-      console.log('Error', err);
-      res.send('<h1>Something went wrong.</h1>');
-    } else {
-      res.write(data)
-      res.end();
-    }
+  //   if (err) {
+  //     console.log('Error', err);
+  //     res.send('<h1>Something went wrong.</h1>');
+  //   } else {
+  //     res.write(data)
+  //     res.end();
+  //   }
 
-  })
+  // })
+
+
+  const title = 'This is About Route. Dynamic Title'
+
+  res.render('pages/about', {title});
 
 }
   
@@ -118,17 +123,23 @@ exports.productsController = (req, res) => {
 
 
 
-  fs.readFile('./pages/products.html', (err, data) => {
+  // fs.readFile('./pages/products.html', (err, data) => {
 
-    if (err) {
-      console.log('Error', err);
-      res.send('<h1>Something went wrong.</h1>');
-    } else {
-      res.write(data)
-      res.end();
-    }
+  //   if (err) {
+  //     console.log('Error', err);
+  //     res.send('<h1>Something went wrong.</h1>');
+  //   } else {
+  //     res.write(data)
+  //     res.end();
+  //   }
 
-  })
+  // })
+
+
+
+  const title = 'This is Products Route. Dynamic Title'
+
+  res.render('pages/products', {title});
 
 }
   
@@ -139,16 +150,22 @@ exports.contactController = (req, res) => {
   // res.send('<h1>This is Contact Route.</h1>');
 
 
-  fs.readFile('./pages/contact.html', (err, data) => {
+  // fs.readFile('./pages/contact.html', (err, data) => {
 
-    if (err) {
-      console.log('Error', err);
-      res.send('<h1>Something went wrong.</h1>');
-    } else {
-      res.write(data)
-      res.end();
-    }
+  //   if (err) {
+  //     console.log('Error', err);
+  //     res.send('<h1>Something went wrong.</h1>');
+  //   } else {
+  //     res.write(data)
+  //     res.end();
+  //   }
 
-  })
+  // })
+
+
+
+  const title = 'This is Contact Route. Dynamic Title'
+
+  res.render('pages/contact', {title});
 
 }
