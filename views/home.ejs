@@ -11,14 +11,22 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="/style.css">
 
   </head>
   <body>
 
     <div class="container mt-5">
       <div class="jumbotron text-center">
-        <h1 class="display-4">Hello World</h1>
+
+        <h1 class="display-4"> <%= title %> </h1>
+
+        <a href="" class="btn btn-primary mb-3">
+
+          Date: <%= new Date().toISOString() %>
+
+        </a>
+
         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus, ducimus. Error sunt illum eum sint libero? Architecto laboriosam optio repellendus amet quis ut vitae? Fuga modi temporibus ducimus voluptatum, obcaecati libero nostrum nisi veritatis excepturi officia natus facilis dolorum architecto totam eos laborum! Sapiente accusamus autem consectetur, optio consequatur a?</p>
         <button class="btn btn-success">Call Me</button>
       </div>

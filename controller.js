@@ -72,17 +72,21 @@ exports.homeController = (req, res) => {
   // res.send('<h1>This is Root Route.</h1>');
 
 
-  fs.readFile('./pages/index.html', (err, data) => {
+  // fs.readFile('./pages/index.html', (err, data) => {
 
-    if (err) {
-      console.log('Error', err);
-      res.send('<h1>Something went wrong.</h1>');
-    } else {
-      res.write(data)
-      res.end();
-    }
+  //   if (err) {
+  //     console.log('Error', err);
+  //     res.send('<h1>Something went wrong.</h1>');
+  //   } else {
+  //     res.write(data)
+  //     res.end();
+  //   }
 
-  })
+  // })
+
+  const title = 'Dynamic Title'
+
+  res.render('home', {title});
 
 };
 
