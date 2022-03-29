@@ -84,7 +84,7 @@ exports.homeController = (req, res) => {
 
   // })
 
-  const title = 'Dynamic Title'
+  const title = 'Home Page'
 
   res.render('pages/home', {title});
 
@@ -109,7 +109,7 @@ exports.aboutController = (req, res) => {
   // })
 
 
-  const title = 'This is About Route. Dynamic Title'
+  const title = 'About Page'
 
   res.render('pages/about', {title});
 
@@ -137,7 +137,7 @@ exports.productsController = (req, res) => {
 
 
 
-  const title = 'This is Products Route. Dynamic Title'
+  const title = 'Products Page'
 
   res.render('pages/products', {title});
 
@@ -164,7 +164,7 @@ exports.contactController = (req, res) => {
 
 
 
-  const title = 'This is Contact Route. Dynamic Title'
+  const title = 'Contact Page'
 
   res.render('pages/contact', {title});
 
